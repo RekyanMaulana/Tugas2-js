@@ -1,0 +1,45 @@
+<script>
+    //Deklarasi Variabel dan Value
+    let pegawai = "Raden Rekyan Maulana Setyawan";
+    let jabatan = "Manager";
+    let status = "Belum Menikah"
+
+    //Menghitung Gaji Pokok
+    let gaji = 0;
+    switch(jabatan){
+        case 'Manager': gaji = 10000000; break;
+        case 'Asisten Manager': gaji = 8000000; break;
+        case 'Staff': gaji = 5000000; break;
+        default: gaji = 0;
+    }
+
+    //Menghitung Tunjangan Jabatan
+    let tunjangan_jabatan = 0.1 * gaji;
+
+    //Menghitung BPJS
+    let bpjs = 0.1 * gaji;
+
+    //Menghitung Tunjangan Keluarga
+    let tunjangan_keluarga = 0;
+    if(status == 'Menikah') tunjangan_keluarga = 0.1 * gaji;
+    else tunjangan_keluarga = 0 * gaji;
+
+    //Menghitung Total Pendapatan
+    let total = gaji + tunjangan_jabatan + bpjs + tunjangan_keluarga;
+
+    //Tampilkan
+    document.write("<h1 align='center'>Data Pendapatan Pegawai</h1>");
+    document.write("<hr/>");
+    document.write("<b> Data Pegawai </b>" +
+    "<br> Nama Pegawai : " + pegawai +
+    "<br> Jabatan : " + jabatan +
+    "<br> Status : " + status +
+    "<br><hr/>" +
+    "<b> Pendapatan Pegawai </b>" +
+    "<br> 1. Gaji Pokok : " + gaji +
+    "<br> 2. Tunjangan Jabatan : " + tunjangan_jabatan +
+    "<br> 3. BPJS : " + bpjs +
+    "<br> 4. Tunjangan Keluarga : " + tunjangan_keluarga +
+    "<br><hr/>" +
+    "<b> Total Pendapatan : </b>" + total);
+</script>
